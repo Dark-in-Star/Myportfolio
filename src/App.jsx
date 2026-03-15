@@ -1,10 +1,9 @@
-import './App.css'
-import About from './assets/about'
-import Contact from './assets/contact'
-import Navbar from './assets/navbar'
-import Project from './assets/project'
-import Skill from './assets/skill'
-import Footer from './assets/footer'
+import About from './component/about'
+import Contact from './component/contact'
+import Navbar from './component/navbar'
+import Project from './component/project'
+import Skill from './component/skill'
+import Footer from './component/footer'
 
 
 function App() {
@@ -14,7 +13,7 @@ function App() {
      <Navbar/>
         <About />
       </div>
-      <div id="skill" className="skill-section sec" >
+      <div id="skill" className="skill-section sec">
         <Skill />
       </div>
       <div id="project" className="project-section sec">

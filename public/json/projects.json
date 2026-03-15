@@ -1,0 +1,36 @@
+[
+    {
+      "src": "./static/project1.PNG",
+      "href": "https://customerpage.vercel.app/"
+    },
+    {
+      "src": "./static/project2.PNG",
+      "href": "https://job-worker.vercel.app/"
+    },
+    {
+      "src": "./static/project3.PNG",
+      "href": "https://github.com/Dark-in-Star/Lead-Tracker"
+    },
+    {
+        "src": "./static/project4.PNG",
+        "href": "https://tony-chopper.vercel.app/"
+    },
+    {
+        "src": "./static/project5.PNG",
+        "href": "https://github.com/Dark-in-Star/BelugaOP/"
+    },
+    {
+        "src": "./static/project6.PNG",
+        "href": "https://github.com/Dark-in-Star/nodejs-database-chat-app"
+    },
+    {
+      "src": "./static/project7.PNG",
+      "href": "https://github.com/arpanburman/GRINDSZN_APP"
+    },
+    {
+      "src": "./static/project8.PNG",
+      "href": "https://github.com/arpanburman/ryne-olive-app"
+    }
+  ]
+  
+  

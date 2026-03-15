@@ -1,19 +1,125 @@
-html{
-  scroll-behavior: smooth;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  }
+  body {
+    background: #c4c6d1;
+  }
 }
-body,html{
-  margin:0;
-  padding: 0;
-  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-}
-body{
-  background: #c4c6d1;
-}
-.u-s-n{
-  user-select: none;
-}
+
 @media screen and (max-width: 768px) {
-body,html{
-  overflow-x: hidden;
+  body, html { overflow-x: hidden; }
 }
+
+@layer utilities {
+  .u-s-n { user-select: none; }
+}
+
+/* ── Custom keyframes ── */
+@keyframes pulse-shadow {
+  0%   { box-shadow: 0 0 0 0 black; }
+  65%  { box-shadow: 0 0 0 10px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+/* ── Scroll-snap utility (kept for App.jsx sec sections) ── */
+.sec {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* ── Para slide-in ── */
+.para-anim {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 2s, transform 2s;
+}
+.para-anim.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Photo fade-in ── */
+.photo-anim {
+  mix-blend-mode: color-burn;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+.photo-anim.fade-in {
+  opacity: 1;
+}
+
+/* ── Hire-me button slide + pulse ── */
+.hirebtn-anim {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 2s;
+  animation: pulse-shadow 1.8s infinite;
+}
+.hirebtn-anim.left-slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Social-media icons margin slide ── */
+.social-anim i img {
+  width: 30px;
+  margin: 0px 30px 0px;
+  cursor: pointer;
+  transition: margin 2s;
+}
+.social-anim.slide-in i img {
+  margin: 0px 30px 40px;
+}
+
+/* ── Contact container slide-up ── */
+.contact-anim {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.5s, transform 1.5s;
+}
+.contact-anim.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Skill label animations ── */
+.label-anim {
+  opacity: 0;
+  transition: all 1.4s;
+}
+.label-anim.left-to-right  { transform: translateX(-100px); }
+.label-anim.right-to-left  { transform: translateX(100px); }
+.label-anim.left-to-right.animate,
+.label-anim.right-to-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Project framebox fade-in ── */
+.framebox-anim {
+  opacity: 0;
+  transition: opacity 2s;
+}
+.framebox-anim.fade-in { opacity: 1; }
+
+/* ── AnimatedDiv ── */
+.animated-div {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.animated-div.fade-in-left {
+  opacity: 1;
+  transform: translateX(0);
 }
